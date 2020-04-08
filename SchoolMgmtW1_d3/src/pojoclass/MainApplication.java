@@ -1,10 +1,5 @@
 package pojoclass;
-/*
- * 
- * 
- * 
- * 
- */
+
 import java.util.List;
 import java.util.Scanner;
 
@@ -53,8 +48,7 @@ public class MainApplication {
 		switch (selectedAction) {
 		case "A":
 			SportsPojo sportspojo = new SportsPojo();
-			sportId = 10;
-//			sports.sportId();															////////////////////
+			sportId = sports.sportId();															////////////////////
 			sportspojo.setId(String.valueOf(sportId));
 			System.out.println("Add Sports Menu");
 			System.out.println("Enter Sport Name: ");

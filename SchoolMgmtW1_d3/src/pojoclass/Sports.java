@@ -62,10 +62,11 @@ public class Sports {
 	}
 
 	public int sportId() {
-		for (int i = 0; i <= allSports.size(); i++) {
+		for (int i = 0; i < allSports.size(); i++) {
 			int x = Integer.valueOf(this.allSports.get(i).getId());
 			if(x>=sportId) {
 				sportId=x+1;
+				
 			}
 		}
 		return sportId;
