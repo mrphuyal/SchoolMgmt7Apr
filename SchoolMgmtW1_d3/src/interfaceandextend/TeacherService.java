@@ -4,13 +4,16 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class TeacherService implements CRUDService {
 	private List<TeacherPojo> allTeachers = new ArrayList<TeacherPojo>();
 	String teacherLocation = "C:\\Users\\Sudip\\Desktop\\JavaClass\\data\\teacher.csv";
+
+	public TeacherService() {
+		readFromFile();
+	}
 
 	@Override
 	public void readFromFile() {
@@ -48,35 +51,36 @@ public class TeacherService implements CRUDService {
 	}
 
 	@Override
-	public List getAll() {
+	public List<TeacherPojo> getAll() {
 		return this.allTeachers;
 	}
 
 	@Override
-	public TeacherPojo getById(String id) {						//something missing
+	public TeacherPojo getById(String id) { // something missing
 		for (int i = 0; i < this.allTeachers.size(); i++) {
-			if(this.allTeachers.get(i).equals(id)) {
+			if (this.allTeachers.get(i).equals(id)) {
 				return this.allTeachers.get(i);
 			}
 		}
 		return null;
 	}
 
-	@Override
-	public void update() {
-		// TODO Auto-generated method stub
 
+	@Override
+	public void delete(String deleteId) throws Exception {
+		for (int i = 0; i < allTeachers.size(); i++) {
+			if (allTeachers.get(i).getId().equals(deleteId)) {
+				allTeachers.remove(i);
+				break;
+			}
+		}
+//		update(tempStudents);
+		System.out.println("Teacher Id " + deleteId + " deleted sucessfully ! from teacher service");
+		saveToFile();
 	}
 
-	@Override
-	public void delete(String deleteId) {
-		
-
-	}
-
-	@Override
 	public void add(TeacherPojo newTeacher) throws Exception {
-		this.allTeachers.add(newTeacher);
+	this.allTeachers.add(newTeacher);
 		saveToFile();
 	}
 
@@ -92,16 +96,19 @@ public class TeacherService implements CRUDService {
 		return String.valueOf(tempId);
 	}
 
-	@Override
-	public void add() {
-		// TODO Auto-generated method stub
 
+	@Override
+	public void update(List tempList) throws Exception {
+		this.allTeachers = tempList;
+		saveToFile();
+		
 	}
 
 	@Override
-	public void delete() {
+	public void add(Object pojo) throws Exception {
 		// TODO Auto-generated method stub
 		
 	}
+
 
 }

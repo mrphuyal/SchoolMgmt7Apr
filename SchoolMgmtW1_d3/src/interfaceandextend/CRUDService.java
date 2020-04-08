@@ -9,20 +9,17 @@ public interface CRUDService {
 
 	List getAll();
 
-//	void getById();
-
-	void update();
-
-	void delete();
-
-	void add();
-
 	String getNextId();
 
-	TeacherPojo getById(String id);
+	Object getById(String id);
 
-	void add(TeacherPojo newTeacher) throws Exception;
+//	void add() throws Exception;
 
-	void delete(String deleteId);
+	void delete(String deleteId) throws Exception;
+
+	void update(List tempList) throws Exception;
+
+	void add(Object pojo) throws Exception;
+
 
 }
