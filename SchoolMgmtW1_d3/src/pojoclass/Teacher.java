@@ -14,7 +14,7 @@ public class Teacher {
 //	Scanner in = new Scanner(System.in);
 	String teacherLocation = "C:\\Users\\Sudip\\Desktop\\JavaClass\\data\\teacher.csv";
 
-	public Teacher() {													
+	public Teacher() {
 		readFromFile(teacherLocation);
 	}
 

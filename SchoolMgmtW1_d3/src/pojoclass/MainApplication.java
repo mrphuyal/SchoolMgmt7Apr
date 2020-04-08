@@ -48,7 +48,7 @@ public class MainApplication {
 		switch (selectedAction) {
 		case "A":
 			SportsPojo sportspojo = new SportsPojo();
-			sportId = sports.sportId();															////////////////////
+			sportId = sports.sportId(); ////////////////////
 			sportspojo.setId(String.valueOf(sportId));
 			System.out.println("Add Sports Menu");
 			System.out.println("Enter Sport Name: ");
@@ -100,7 +100,7 @@ public class MainApplication {
 			System.out.println("ID\tSportName\tPlayerName");
 			for (int i = 0; i < allPojo.size(); i++) {
 				System.out.println(allPojo.get(i).getId() + "\t" + allPojo.get(i).getSportName() + "\t\t"
-						+ allPojo.get(i).getPlayerName() );
+						+ allPojo.get(i).getPlayerName());
 			}
 			mainMenu();
 			break;
